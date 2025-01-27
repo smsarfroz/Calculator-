@@ -15,7 +15,7 @@ as he clicks number
 the display will keep on adding that number in backside
 the string will increase or decrease
 If he has entered a number and then also selected an operator
-now, if he enteres a number then this one is second number
+now, if he enters a number then this one is second number
 
 is variable firstNumber undefined before it's entered ?
 we've to handle onlick for each of the buttons 
@@ -54,6 +54,7 @@ computation, right ?
 const container = document.querySelector('.Calculator');
 const display = document.querySelector('.display');
 display.textContent = "0";
+// display.style.cssText = "text-align: right;";
 let result; 
 function add(a , b) {
     const num1 = Number(a);
@@ -126,14 +127,22 @@ for(let button of allNumberButtons) {
                 firstNumber+=button.textContent;  
             }
 
-        }else if(firstNumber !== undefined && operator !==undefined) {
+        }else if(firstNumber !== undefined) {
             
-            if(secondNumber === undefined) {
-                display.textContent = button.textContent;
-                secondNumber = button.textContent;
+            if(operator !== undefined) {
+
+                if(secondNumber === undefined) {
+                    display.textContent = button.textContent;
+                    secondNumber = button.textContent;
+                }else {
+                    display.textContent+=button.textContent;
+                    secondNumber+=button.textContent;
+                }
+
             }else {
+
                 display.textContent+=button.textContent;
-                secondNumber+=button.textContent;
+                firstNumber+=button.textContent;
             }
         }
         console.log(`${button.textContent} is clicked`);

@@ -1,11 +1,69 @@
+/*
+Break down the problem in smaller parts and focus on those parts first.
+How do I let the buttons fill the space horizontally by adjusting their size ?
+also vertically 
+we have each button has the same size and 0 has size of two buttons
+so, should we define the size of a button and then set the border accordingly ? 
+
+or should I use flex grow to let the buttons grow automatically ? 
+*/
+* {
+    box-sizing: border-box;
+    
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-size: large;
+}
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+}
 .Calculator {
-    width: 100px;
-    height: 100px;
-    border: 3px solid black;
+    margin-top: 150px;
+    width: 280px;
+    height: auto;
+    border: 10px solid rgb(76, 71, 71);
 }
 
+.display {
+    height: 60px;
+
+    font-size:xx-large;
+    display: flex;
+    align-items: center;
+    justify-content: right;
+}
 .row1 , .row2, .row3, .row4 , .row5 {
 
     display: flex;
-    
+    background-color: brown;
+}
+
+button {
+    height: 60px;
+    width: 70px;
+    border-radius: 4px;
+}
+.zero {
+    width: 140px;
+}
+.display {
+    background-color: grey;
+    padding: 8px;
+    border: 4px solid black;
+
+
+}
+
+.number , .dot {
+    background-color: rgb(64, 107, 64);
+}
+
+.operator, .calculate {
+    background-color: orange;
+}
+
+.percent, .sign, .clear {
+    background-color:cornflowerblue;
 }
